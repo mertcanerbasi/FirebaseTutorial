@@ -26,7 +26,8 @@ struct AuthenticationView: View {
                     .foregroundColor(.white)
                 Spacer().frame(height: 20)
                 NavigationLink {
-                    SignInWithEmail(showSignInView: $showSignInView)
+                    RegisterView()
+//                    SignInWithEmail(showSignInView: $showSignInView)
                 } label: {
                     Text("Get Started")
                         .font(.system(size: 14,weight: .bold))
@@ -38,14 +39,14 @@ struct AuthenticationView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 Spacer().frame(height: 20)
-                                NavigationLink {
-                                    LoginView(showSignInView: $showSignInView)
-                                } label: {
-                                    Text("Already have account ?")
-                                        .font(.system(size: 14,weight: .bold))
-                                        .foregroundColor(.white)
+                NavigationLink {
+                    LoginView(showSignInView: $showSignInView)
+                } label: {
+                    Text("Already have account ?")
+                        .font(.system(size: 14,weight: .bold))
+                        .foregroundColor(.white)
 
-                                }
+                }
 
 
 

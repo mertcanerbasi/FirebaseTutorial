@@ -9,20 +9,19 @@ import SwiftUI
 
 struct RootView: View {
     @StateObject var viewModel = container.resolve(RootViewModel.self)!
-    @State private var showSignInView: Bool = true
     var body: some View {
         ZStack {
-            BaseView(showSignInView: $showSignInView)
+            BaseView(showSignInView: $viewModel.showSignInView)
         }.onAppear {
             viewModel.isAuthenticated() {
                 res in
-                showSignInView = res
+                viewModel.showSignInView = res
             }
         }
-        .fullScreenCover(isPresented: $showSignInView, content: {
+        .fullScreenCover(isPresented: $viewModel.showSignInView, content: {
             NavigationStack {
-                AuthenticationView(showSignInView: $showSignInView)
-            }
+                AuthenticationView(showSignInView: $viewModel.showSignInView)
+            }.tint(.vividOrange)
         })
     }
 }

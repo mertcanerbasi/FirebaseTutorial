@@ -15,6 +15,8 @@ final class RootViewModel : ObservableObject {
         self._authRepository = authRepository
     }
 
+    @Published var showSignInView: Bool = true
+
     func isAuthenticated(compilation: @escaping((Bool) -> Void) ) {
         do {
             let _ = try _authRepository.getUserData()
