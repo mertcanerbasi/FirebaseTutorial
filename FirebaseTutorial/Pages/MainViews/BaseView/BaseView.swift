@@ -10,30 +10,29 @@ import SwiftUI
 struct BaseView: View {
     @Binding var showSignInView : Bool
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
 
-            WorkoutsView()
-                .tabItem {
-                    Image(systemName: "dumbbell")
-                    Text("Workouts")
-                }
+                WorkoutsView()
+                    .tabItem {
+                        Image(systemName: "dumbbell")
+                        Text("Workouts")
+                    }
 
-            ProfileView(showSingInView: $showSignInView
-                )
-                .tabItem {
-                    Image(systemName: "person")
-                    Text("Profile")
-                }
+                ProfileView(showSingInView: $showSignInView
+                    )
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
 
 
-        }
-        .tint(.red)
-
+            }
+            .tint(.vividOrange)
     }
 }
 

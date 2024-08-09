@@ -13,5 +13,13 @@ final class HomeViewModel : ObservableObject {
         print("Hello")
     }
 
+    @Published var user : UserModel = UserModel(name: "Mertcan", age: 26)
+
+}
+
+struct UserModel {
+    let name: String
+    let age: Int
+
 }
 
