@@ -25,7 +25,7 @@ final class SignInEmailViewModel: ObservableObject {
 
         Task {
             do {
-                let _ = try await _authRepository.createUser(email: email, password: password)
+                let _ = try await _authRepository.registerWithEmailAndPassword(email: email, password: password)
             } catch {
                 print("Error: \(error)")
             }

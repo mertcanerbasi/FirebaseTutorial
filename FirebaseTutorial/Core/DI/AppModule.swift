@@ -13,20 +13,20 @@ let container = Container()
 
 func setupDI() {
 
-    container.register(AuthRepository.self) { _ in
-        AuthRepository()
+    container.register(AuthRepositoryImpl.self) { _ in
+        AuthRepositoryImpl()
     }
 
     container.register(RootViewModel.self) { _ in
-        RootViewModel(authRepository: container.resolve(AuthRepository.self)!)
+        RootViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
     }
 
     container.register(SignInEmailViewModel.self) { _ in
-        SignInEmailViewModel(authRepository: container.resolve(AuthRepository.self)!)
+        SignInEmailViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
     }
 
     container.register(LoginViewModel.self) { _ in
-        LoginViewModel(authRepository: container.resolve(AuthRepository.self)!)
+        LoginViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
     }
 
     container.register(HomeViewModel.self) { _ in
@@ -37,7 +37,7 @@ func setupDI() {
         WorkoutsViewModel()
     }
     container.register(ProfileViewModel.self) { _ in
-        ProfileViewModel(authRepository: container.resolve(AuthRepository.self)!)
+        ProfileViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
     }
 
 }

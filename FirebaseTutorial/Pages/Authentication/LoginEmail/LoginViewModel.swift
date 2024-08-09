@@ -19,7 +19,7 @@ final class LoginViewModel : ObservableObject {
     @Published var password : String = ""
 
     func login(compilation : @escaping (Bool) -> Void) {
-        _authRepository.login(email: email, password: password) { user in
+        _authRepository.loginWithEmailAndPassword(email: email, password: password) { user in
             if(user != nil) {
                 print("loggedIn")
                 compilation(false)

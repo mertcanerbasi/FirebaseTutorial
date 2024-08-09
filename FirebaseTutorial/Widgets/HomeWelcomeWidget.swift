@@ -30,5 +30,5 @@ struct HomeWelcomeWidget: View {
 }
 
 #Preview {
-    HomeWelcomeWidget(user: UserModel(name: "Mertcan", age: 26))
+    HomeWelcomeWidget(user: UserModel(name: "Mertcan", age: 26, gender: .male, height: 183, weight: 85, isPremium: false, language: .english, notificationsEnabled: true))
 }

@@ -17,7 +17,7 @@ final class RootViewModel : ObservableObject {
 
     func isAuthenticated(compilation: @escaping((Bool) -> Void) ) {
         do {
-            let _ = try _authRepository.getAuthenticatedUser()
+            let _ = try _authRepository.getUserData()
             compilation(false)
         }
         catch {
