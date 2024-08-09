@@ -17,13 +17,7 @@ struct HomeView: View {
                 VStack{
                     HomeWelcomeWidget(user: viewModel.user)
                     Spacer().frame(height: 20)
-                    VStack(alignment: .leading) {
-                        Text("Your Progress")
-                            .font(.system(size: 14,weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity,alignment: .leading)
-
-                    }
+                    ProgressWidget()
                     Spacer()
                 }
             }.padding(.horizontal)
@@ -36,24 +30,6 @@ struct HomeView: View {
     HomeView()
 }
 
-struct HomeWelcomeWidget: View {
-    var user: UserModel
-    var body: some View {
-        HStack {
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(Color(.vividOrange))
-            Spacer()
-                .frame(width: 10)
-            Text("Merhaba \(user.name)")
-                .font(.title2) // Use a custom font if needed
-                .fontWeight(.medium)
-                .foregroundColor(.white)
 
-            Spacer() // This pushes the text to the leading side
-        }
-        .frame(maxWidth: .infinity)
 
-    }
-}
+

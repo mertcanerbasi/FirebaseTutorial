@@ -25,6 +25,9 @@
 		C96700132C65393B00AC9805 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96700122C65393B00AC9805 /* RootViewModel.swift */; };
 		C96700162C65FAFD00AC9805 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96700152C65FAFD00AC9805 /* LoginView.swift */; };
 		C96700182C65FB0C00AC9805 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96700172C65FB0C00AC9805 /* LoginViewModel.swift */; };
+		C967001B2C662F2600AC9805 /* HomeWelcomeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967001A2C662F2600AC9805 /* HomeWelcomeWidget.swift */; };
+		C967001D2C662F7000AC9805 /* ProgressWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967001C2C662F7000AC9805 /* ProgressWidget.swift */; };
+		C967001F2C662FC400AC9805 /* ProfileTileWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967001E2C662FC400AC9805 /* ProfileTileWidget.swift */; };
 		C967FFF72C652C4200AC9805 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFF62C652C4200AC9805 /* BaseView.swift */; };
 		C967FFF92C652CC900AC9805 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFF82C652CC900AC9805 /* ProfileView.swift */; };
 		C967FFFB2C652DAF00AC9805 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFFA2C652DAF00AC9805 /* WorkoutsView.swift */; };
@@ -50,6 +53,9 @@
 		C96700122C65393B00AC9805 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		C96700152C65FAFD00AC9805 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C96700172C65FB0C00AC9805 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C967001A2C662F2600AC9805 /* HomeWelcomeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWelcomeWidget.swift; sourceTree = "<group>"; };
+		C967001C2C662F7000AC9805 /* ProgressWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressWidget.swift; sourceTree = "<group>"; };
+		C967001E2C662FC400AC9805 /* ProfileTileWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTileWidget.swift; sourceTree = "<group>"; };
 		C967FFF62C652C4200AC9805 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C967FFF82C652CC900AC9805 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C967FFFA2C652DAF00AC9805 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 			children = (
 				C96700042C652FC300AC9805 /* Core */,
 				C96700032C652FB900AC9805 /* Pages */,
+				C96700192C662F0B00AC9805 /* Widgets */,
 				C94321A32C64F4D800EDF50E /* FirebaseTutorialApp.swift */,
 				C94321B12C64F78C00EDF50E /* GoogleService-Info.plist */,
 				C94321A72C64F4DC00EDF50E /* Assets.xcassets */,
@@ -194,6 +201,16 @@
 				C96700172C65FB0C00AC9805 /* LoginViewModel.swift */,
 			);
 			path = LoginEmail;
+			sourceTree = "<group>";
+		};
+		C96700192C662F0B00AC9805 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				C967001A2C662F2600AC9805 /* HomeWelcomeWidget.swift */,
+				C967001C2C662F7000AC9805 /* ProgressWidget.swift */,
+				C967001E2C662FC400AC9805 /* ProfileTileWidget.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 		C967FFF22C652C1200AC9805 /* MainViews */ = {
@@ -338,11 +355,14 @@
 				C967FFFB2C652DAF00AC9805 /* WorkoutsView.swift in Sources */,
 				C96700162C65FAFD00AC9805 /* LoginView.swift in Sources */,
 				C9DD9CCF2C652A9C0043C8A1 /* HomeViewModel.swift in Sources */,
+				C967001F2C662FC400AC9805 /* ProfileTileWidget.swift in Sources */,
 				C967000D2C65360400AC9805 /* AuthDataUserModel.swift in Sources */,
 				C967000A2C6535D200AC9805 /* AuthRepository.swift in Sources */,
 				C94321C02C64FA6E00EDF50E /* AuthenticationView.swift in Sources */,
+				C967001D2C662F7000AC9805 /* ProgressWidget.swift in Sources */,
 				C96700132C65393B00AC9805 /* RootViewModel.swift in Sources */,
 				C967FFF72C652C4200AC9805 /* BaseView.swift in Sources */,
+				C967001B2C662F2600AC9805 /* HomeWelcomeWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
