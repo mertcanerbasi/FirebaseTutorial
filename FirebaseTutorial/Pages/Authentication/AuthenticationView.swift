@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AuthenticationView: View {
-    @Binding var showSignInView: Bool
     var body: some View {
         ZStack {
             Image("bgImage") // Replace with your image name
@@ -40,7 +39,7 @@ struct AuthenticationView: View {
                 }
                 Spacer().frame(height: 20)
                 NavigationLink {
-                    LoginView(showSignInView: $showSignInView)
+                    LoginView()
                 } label: {
                     Text("Already have account ?")
                         .font(.system(size: 14,weight: .bold))
@@ -62,7 +61,7 @@ struct AuthenticationView: View {
 
 #Preview {
     NavigationStack {
-        AuthenticationView(showSignInView: .constant(true))
+        AuthenticationView()
     }
 
 }

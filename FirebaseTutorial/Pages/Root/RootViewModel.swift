@@ -17,14 +17,16 @@ final class RootViewModel : ObservableObject {
 
     @Published var showSignInView: Bool = true
 
-    func isAuthenticated(compilation: @escaping((Bool) -> Void) ) {
+    func isAuthenticated() {
         do {
             let _ = try _authRepository.getUserData()
-            compilation(false)
+            self.showSignInView = false
+
+
         }
         catch {
             print("Error : \(error.localizedDescription)")
-            compilation(true)
+            self.showSignInView = true
         }
     }
 }

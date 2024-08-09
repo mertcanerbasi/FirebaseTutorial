@@ -15,11 +15,11 @@ func setupDI() {
 
     container.register(AuthRepositoryImpl.self) { _ in
         AuthRepositoryImpl()
-    }
+    }.inObjectScope(.container)
 
     container.register(RootViewModel.self) { _ in
         RootViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
-    }
+    }.inObjectScope(.container)
 
     container.register(RegisterViewModel.self) { _ in
         RegisterViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)

@@ -11,16 +11,13 @@ struct RootView: View {
     @StateObject var viewModel = container.resolve(RootViewModel.self)!
     var body: some View {
         ZStack {
-            BaseView(showSignInView: $viewModel.showSignInView)
+            BaseView()
         }.onAppear {
-            viewModel.isAuthenticated() {
-                res in
-                viewModel.showSignInView = res
-            }
+            viewModel.isAuthenticated()
         }
         .fullScreenCover(isPresented: $viewModel.showSignInView, content: {
             NavigationStack {
-                AuthenticationView(showSignInView: $viewModel.showSignInView)
+                AuthenticationView()
             }.tint(.vividOrange)
         })
     }

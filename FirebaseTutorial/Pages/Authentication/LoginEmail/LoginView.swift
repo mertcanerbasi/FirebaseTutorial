@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var viewModel: LoginViewModel = container.resolve(LoginViewModel.self)!
-    @Binding var showSignInView: Bool
+    @ObservedObject var rootVm: RootViewModel = container.resolve(RootViewModel.self)!
     var body: some View {
         VStack {
             TextField("Email...", text: $viewModel.email)
@@ -29,7 +29,7 @@ struct LoginView: View {
             Button(action:  {
 
                 viewModel.login() { res in
-                    showSignInView = res
+                    rootVm.isAuthenticated()
                 }
 
             }, label: {
@@ -56,5 +56,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(showSignInView: .constant(true))
+    LoginView()
 }
