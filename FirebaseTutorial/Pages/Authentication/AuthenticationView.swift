@@ -10,36 +10,52 @@ import SwiftUI
 struct AuthenticationView: View {
     @Binding var showSignInView: Bool
     var body: some View {
-        VStack {
-            NavigationLink {
-                SignInWithEmail(showSignInView: $showSignInView)
-            } label: {
-                Text("Sign in With Email")
-                    .font(.headline)
+        ZStack {
+            Image("bgImage") // Replace with your image name
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                Text("Welcome To GymPol")
+                    .font(.system(size: 24,weight: .semibold))
                     .foregroundColor(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
-            NavigationLink {
-                LoginView(showSignInView: $showSignInView)
-            } label: {
-                Text("Login With Email")
-                    .font(.headline)
+                Spacer().frame(height: 5)
+                Text("Your personal sport Assistant")
+                    .font(.system(size: 14,weight: .regular))
                     .foregroundColor(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-            }
+                Spacer().frame(height: 20)
+                NavigationLink {
+                    SignInWithEmail(showSignInView: $showSignInView)
+                } label: {
+                    Text("Get Started")
+                        .font(.system(size: 14,weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(.vertical,10)
+                        .padding(.horizontal,50)
+                        .frame(maxWidth: .infinity)
+                        .background(.vividOrange)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+                Spacer().frame(height: 20)
+                                NavigationLink {
+                                    LoginView(showSignInView: $showSignInView)
+                                } label: {
+                                    Text("Already have account ?")
+                                        .font(.system(size: 14,weight: .bold))
+                                        .foregroundColor(.white)
 
-            Spacer()
+                                }
+
+
+
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical,20)
+
 
         }
-        .padding(.horizontal,10)
-        .padding(.vertical,15)
-        .navigationTitle("Sign In")
+
     }
 }
 
