@@ -25,6 +25,10 @@ func setupDI() {
         SignInEmailViewModel(authRepository: container.resolve(AuthRepository.self)!)
     }
 
+    container.register(LoginViewModel.self) { _ in
+        LoginViewModel(authRepository: container.resolve(AuthRepository.self)!)
+    }
+
     container.register(HomeViewModel.self) { _ in
         HomeViewModel()
     }

@@ -21,6 +21,13 @@ final class AuthRepository {
        return AuthDataResultModel(user: authDataResult.user)
     }
 
+    func login(email: String, password: String,compilation: @escaping (User?) -> Void) {
+        let authResult = Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
+            guard let self = self else { return }
+            compilation(result?.user)
+        }
+    }
+
     func signout() {
         do {
             try Auth.auth().signOut()

@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject var viewModel = container.resolve(ProfileViewModel.self)!
+    @Binding var showSingInView: Bool
     var body: some View {
         Button(action: {
             viewModel.signout()
+            showSingInView = true
         }, label: {
             Text("Sign Out")
         })
@@ -19,5 +21,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(showSingInView: .constant(true))
 }

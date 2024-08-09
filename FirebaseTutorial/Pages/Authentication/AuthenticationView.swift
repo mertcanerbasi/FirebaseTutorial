@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct AuthenticationView: View {
+    @Binding var showSignInView: Bool
     var body: some View {
         VStack {
             NavigationLink {
-                SignInWithEmail()
+                SignInWithEmail(showSignInView: $showSignInView)
             } label: {
                 Text("Sign in With Email")
                     .font(.headline)
@@ -21,6 +22,18 @@ struct AuthenticationView: View {
                     .background(.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
+            NavigationLink {
+                LoginView(showSignInView: $showSignInView)
+            } label: {
+                Text("Login With Email")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(.blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+
             Spacer()
 
         }
@@ -32,7 +45,7 @@ struct AuthenticationView: View {
 
 #Preview {
     NavigationStack {
-        AuthenticationView()
+        AuthenticationView(showSignInView: .constant(true))
     }
 
 }

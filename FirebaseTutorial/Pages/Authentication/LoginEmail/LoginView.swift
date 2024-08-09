@@ -1,34 +1,39 @@
 //
-//  SignInWithEmail.swift
+//  LoginView.swift
 //  FirebaseTutorial
 //
-//  Created by Mertcan Erbaşı on 8.08.2024.
+//  Created by Mertcan Erbaşı on 9.08.2024.
 //
 
 import SwiftUI
 
-struct SignInWithEmail: View {
-    @StateObject private var viewModel = container.resolve(SignInEmailViewModel.self)!
+struct LoginView: View {
+    @StateObject var viewModel: LoginViewModel = container.resolve(LoginViewModel.self)!
     @Binding var showSignInView: Bool
-
     var body: some View {
         VStack {
             TextField("Email...", text: $viewModel.email)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .clipShape(RoundedRectangle(cornerRadius: 15))
 
             TextField("Password...", text: $viewModel.password)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
                 .padding()
                 .background(Color.gray.opacity(0.2))
                 .clipShape(RoundedRectangle(cornerRadius: 15))
 
             Button(action:  {
 
-                  viewModel.signIn()
+                viewModel.login() { res in
+                    showSignInView = res
+                }
 
             }, label: {
-                Text("Sign in")
+                Text("Login")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(height: 55)
@@ -46,12 +51,10 @@ struct SignInWithEmail: View {
         }
         .padding(.horizontal,10)
         .padding(.vertical,15)
-        .navigationTitle("Sign In With Email")
+        .navigationTitle("Login with Email")
     }
 }
 
 #Preview {
-    NavigationStack {
-        SignInWithEmail(showSignInView: .constant(true))
-    }
+    LoginView(showSignInView: .constant(true))
 }

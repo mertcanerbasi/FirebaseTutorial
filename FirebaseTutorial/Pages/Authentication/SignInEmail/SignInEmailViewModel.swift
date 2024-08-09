@@ -26,8 +26,6 @@ final class SignInEmailViewModel: ObservableObject {
         Task {
             do {
                 let _ = try await _authRepository.createUser(email: email, password: password)
-                container.resolve(RootViewModel.self)!.showSignInView = false
-
             } catch {
                 print("Error: \(error)")
             }
