@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GenderSelectionView: View {
     @State var selectedGender : Gender = .female
+
     var body: some View {
         VStack {
             Text("Choose your gender")
@@ -43,7 +44,7 @@ struct GenderSelectionView: View {
 struct GenderSelectionTile: View {
     let gender: String
     @Binding var selected: Gender
-
+    var registerModel: RegisterUserModel = RegisterUserModel.shared
     var body: some View {
         HStack {
             Text(gender)
@@ -60,12 +61,16 @@ struct GenderSelectionTile: View {
         .onTapGesture {
             if gender == "Female" {
                 selected = .female
+                registerModel.gender = .female
             }
             else if gender == "Male" {
                 selected = .male
+                registerModel.gender = .male
             }
             else {
                 selected = .other
+                registerModel.gender = .other
+                print(registerModel.gender)
             }
         }
         .background(

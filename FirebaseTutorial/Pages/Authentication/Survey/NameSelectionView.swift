@@ -24,6 +24,9 @@ struct NameSelectionView: View {
                 .onChange(of: name) { oldValue,newValue in
                     // Update isButtonEnabled based on the length of the name
                     isButtonEnabled = newValue.count > 2
+                    if newValue.count > 2 {
+                        registerModel.name = newValue
+                    }
                 }
             Spacer()
             if isButtonEnabled {
