@@ -32,8 +32,8 @@ struct PromiseView: View {
             Spacer()
             VStack {
                 AnimatedCircularButton(size: 100) {
-                    print(registerModel)
-                        }
+                    // TODO : Save user to firebase and local and create vm
+                }
                 Spacer().frame(height: 20)
                 Text("Press and hold the button to continue")
                     .multilineTextAlignment(.center)
