@@ -15,7 +15,7 @@ struct ProfileView: View {
     var body: some View {
         Button(action: {
             viewModel.signout()
-            rootVm.showSignInView.toggle()
+            rootVm.setRootCase()
         }, label: {
             Text("Sign Out")
         })

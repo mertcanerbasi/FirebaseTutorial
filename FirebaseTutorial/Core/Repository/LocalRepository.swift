@@ -13,9 +13,14 @@ import FirebaseFirestore
 protocol LocalRepository {
     func checkUser(user: User) async throws -> Bool
     func saveUserInfo(user: User) async throws
+    func currentUserData() -> UserModel?
 }
 
 class LocalRepositoryImpl : LocalRepository {
+    func currentUserData()  -> UserModel? {
+        return UserDefaults.standard.getData(forKey: "user", as: UserModel.self)
+    }
+    
     func checkUser(user: FirebaseAuth.User) async throws -> Bool {
         let userDoc = try await Firestore.firestore().collection("users").document(user.uid).getDocument()
         return userDoc.exists

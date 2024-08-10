@@ -58,6 +58,8 @@
 		C9E378C52C67755200A10B11 /* RegisterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378C42C67755200A10B11 /* RegisterErrors.swift */; };
 		C9E378C72C6777AF00A10B11 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378C62C6777AF00A10B11 /* LocalRepository.swift */; };
 		C9E378C92C677A4F00A10B11 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378C82C677A4F00A10B11 /* UserDefaults+.swift */; };
+		C9E378CC2C67847D00A10B11 /* RootCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378CB2C67847D00A10B11 /* RootCases.swift */; };
+		C9E378CF2C6789D400A10B11 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378CE2C6789D400A10B11 /* SurveyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,8 @@
 		C9E378C42C67755200A10B11 /* RegisterErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterErrors.swift; sourceTree = "<group>"; };
 		C9E378C62C6777AF00A10B11 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		C9E378C82C677A4F00A10B11 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
+		C9E378CB2C67847D00A10B11 /* RootCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCases.swift; sourceTree = "<group>"; };
+		C9E378CE2C6789D400A10B11 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 		C94321BE2C64FA3D00EDF50E /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				C9E378CD2C6789C700A10B11 /* Survey */,
 				C967003B2C665B5500AC9805 /* RegisterView */,
 				C96700142C65FAF000AC9805 /* LoginEmail */,
 				C967000E2C65371C00AC9805 /* SignInEmail */,
@@ -271,6 +276,7 @@
 		C96700202C6639F700AC9805 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				C9E378CA2C67847200A10B11 /* RootCases */,
 				C9E378C32C67754600A10B11 /* ErrorCases */,
 				C96700212C663A0100AC9805 /* ActivityLevels.swift */,
 				C96700232C663A4A00AC9805 /* BmiRange.swift */,
@@ -352,6 +358,22 @@
 				C9E378C42C67755200A10B11 /* RegisterErrors.swift */,
 			);
 			path = ErrorCases;
+			sourceTree = "<group>";
+		};
+		C9E378CA2C67847200A10B11 /* RootCases */ = {
+			isa = PBXGroup;
+			children = (
+				C9E378CB2C67847D00A10B11 /* RootCases.swift */,
+			);
+			path = RootCases;
+			sourceTree = "<group>";
+		};
+		C9E378CD2C6789C700A10B11 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				C9E378CE2C6789D400A10B11 /* SurveyView.swift */,
+			);
+			path = Survey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,6 +483,7 @@
 				C967003F2C66605F00AC9805 /* TextFieldWidget.swift in Sources */,
 				C96700282C663AA200AC9805 /* Gender.swift in Sources */,
 				C967004A2C67721500AC9805 /* DialogContent.swift in Sources */,
+				C9E378CF2C6789D400A10B11 /* SurveyView.swift in Sources */,
 				C96700382C664F1200AC9805 /* Workout.swift in Sources */,
 				C967FFFF2C652E3900AC9805 /* ProfileViewModel.swift in Sources */,
 				C96700242C663A4A00AC9805 /* BmiRange.swift in Sources */,
@@ -476,6 +499,7 @@
 				C967002A2C663AB700AC9805 /* Language.swift in Sources */,
 				C967001D2C662F7000AC9805 /* ProgressWidget.swift in Sources */,
 				C967003D2C665B6300AC9805 /* RegisterView.swift in Sources */,
+				C9E378CC2C67847D00A10B11 /* RootCases.swift in Sources */,
 				C96700132C65393B00AC9805 /* RootViewModel.swift in Sources */,
 				C967FFF72C652C4200AC9805 /* BaseView.swift in Sources */,
 				C967001B2C662F2600AC9805 /* HomeWelcomeWidget.swift in Sources */,

@@ -13,17 +13,23 @@ struct RootView: View {
 
     var body: some View {
         Group {
-                if viewModel.showSignInView {
+            switch viewModel.rootCase {
+                case .notLoggedIn:
                     NavigationStack {
                         AuthenticationView()
                     }
                     .tint(.vividOrange)
-                } else {
+                case .survey:
+                    NavigationStack {
+                        SurveyView()
+                    }
+                    .tint(.vividOrange)
+                case .loggedIn:
                     BaseView()
-                }
+            }
             }
             .onAppear {
-                viewModel.isAuthenticated()
+                viewModel.setRootCase()
             }
     }
 }

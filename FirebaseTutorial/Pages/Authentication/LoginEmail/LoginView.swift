@@ -29,7 +29,7 @@ struct LoginView: View {
             Button(action:  {
 
                 viewModel.login() { res in
-                    rootVm.isAuthenticated()
+                    rootVm.setRootCase()
                 }
 
             }, label: {

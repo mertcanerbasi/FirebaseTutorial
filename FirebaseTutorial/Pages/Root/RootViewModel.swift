@@ -10,23 +10,34 @@ import Foundation
 
 final class RootViewModel : ObservableObject {
     final let _authRepository: AuthRepository
+    final let _localRepository: LocalRepository
 
-    init(authRepository: AuthRepository) {
+    init(authRepository: AuthRepository,localRepository: LocalRepository) {
         self._authRepository = authRepository
+        self._localRepository = localRepository
     }
 
-    @Published var showSignInView: Bool = true
+    @Published var rootCase: RootCases = .notLoggedIn
 
-    func isAuthenticated() {
-        do {
-            let _ = try _authRepository.getUserData()
-            self.showSignInView = false
+    func setRootCase(){
+        let user =  _authRepository.getUserData()
+        let localUser = _localRepository.currentUserData()
 
+        if  user != nil,  localUser != nil {
+            DispatchQueue.main.async {
+                self.rootCase = .loggedIn
+            }
 
         }
-        catch {
-            print("Error : \(error.localizedDescription)")
-            self.showSignInView = true
+        else if user != nil {
+            DispatchQueue.main.async {
+                self.rootCase = .survey
+            }
+        }
+        else {
+            DispatchQueue.main.async {
+                self.rootCase = .notLoggedIn
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ func setupDI() {
     }.inObjectScope(.container)
 
     container.register(RootViewModel.self) { _ in
-        RootViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
+        RootViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!,localRepository: container.resolve(LocalRepositoryImpl.self)!)
     }.inObjectScope(.container)
 
     container.register(RegisterViewModel.self) { _ in

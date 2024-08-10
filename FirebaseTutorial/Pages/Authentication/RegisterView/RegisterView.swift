@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var viewModel: RegisterViewModel = container.resolve(RegisterViewModel.self)!
-
+    @ObservedObject var rootVm = container.resolve(RootViewModel.self)!
     var body: some View {
         ScrollView {
             VStack {
@@ -25,7 +25,7 @@ struct RegisterView: View {
                 Spacer().frame(height: 50)
                 SignupButton {
                     viewModel.registerWithEmailAndPassword(){
-                        container.resolve(RootViewModel.self)!.showSignInView = false
+                        rootVm.setRootCase()
                     }
                 }
             }

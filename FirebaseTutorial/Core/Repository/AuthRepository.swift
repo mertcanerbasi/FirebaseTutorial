@@ -10,18 +10,15 @@ import FirebaseAuth
 
 protocol AuthRepository {
     func registerWithEmailAndPassword(email:String, password: String) async throws -> User
-    func getUserData() throws -> User
+    func getUserData() -> User?
     func loginWithEmailAndPassword(email: String, password: String,compilation: @escaping (User?) -> Void)
     func signout()
 }
 
 
 final class AuthRepositoryImpl : AuthRepository {
-    func getUserData() throws -> User {
-        guard let user = Auth.auth().currentUser else{
-            throw URLError(.badServerResponse)
-        }
-        return user
+    func getUserData() -> User? {
+        return Auth.auth().currentUser
     }
 
     func registerWithEmailAndPassword(email: String, password: String) async throws -> User{
