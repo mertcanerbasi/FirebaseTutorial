@@ -31,7 +31,7 @@ struct WeightSelectionView: View {
                             registerModel.weight = newValue
                         }
             Spacer()
-            NavigationLink(destination: WeightSelectionView()) {
+            NavigationLink(destination: PromiseView()) {
                 Text("Continue")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.royalBlue)

@@ -65,6 +65,8 @@
 		C9E378D82C67D48800A10B11 /* AgeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */; };
 		C9E378DA2C67D77000A10B11 /* HeightSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D92C67D77000A10B11 /* HeightSelectionView.swift */; };
 		C9E378DC2C67D8BE00A10B11 /* WeightSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378DB2C67D8BE00A10B11 /* WeightSelectionView.swift */; };
+		C9E378DE2C67D98500A10B11 /* PromiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378DD2C67D98500A10B11 /* PromiseView.swift */; };
+		C9E378E02C67DBE200A10B11 /* AnimatedCircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378DF2C67DBE200A10B11 /* AnimatedCircularButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,8 @@
 		C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSelectionView.swift; sourceTree = "<group>"; };
 		C9E378D92C67D77000A10B11 /* HeightSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelectionView.swift; sourceTree = "<group>"; };
 		C9E378DB2C67D8BE00A10B11 /* WeightSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightSelectionView.swift; sourceTree = "<group>"; };
+		C9E378DD2C67D98500A10B11 /* PromiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseView.swift; sourceTree = "<group>"; };
+		C9E378DF2C67DBE200A10B11 /* AnimatedCircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedCircularButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +282,7 @@
 				C967001C2C662F7000AC9805 /* ProgressWidget.swift */,
 				C967001E2C662FC400AC9805 /* ProfileTileWidget.swift */,
 				C967003E2C66605F00AC9805 /* TextFieldWidget.swift */,
+				C9E378DF2C67DBE200A10B11 /* AnimatedCircularButton.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				C967003B2C665B5500AC9805 /* RegisterView */,
+				C9E378DD2C67D98500A10B11 /* PromiseView.swift */,
 				C9E378DB2C67D8BE00A10B11 /* WeightSelectionView.swift */,
 				C9E378D92C67D77000A10B11 /* HeightSelectionView.swift */,
 				C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */,
@@ -502,11 +508,13 @@
 				C96700382C664F1200AC9805 /* Workout.swift in Sources */,
 				C967FFFF2C652E3900AC9805 /* ProfileViewModel.swift in Sources */,
 				C96700242C663A4A00AC9805 /* BmiRange.swift in Sources */,
+				C9E378DE2C67D98500A10B11 /* PromiseView.swift in Sources */,
 				C967FFFB2C652DAF00AC9805 /* WorkoutsView.swift in Sources */,
 				C96700162C65FAFD00AC9805 /* LoginView.swift in Sources */,
 				C9E378D62C67976900A10B11 /* GenderSelectionView.swift in Sources */,
 				C9DD9CCF2C652A9C0043C8A1 /* HomeViewModel.swift in Sources */,
 				C967001F2C662FC400AC9805 /* ProfileTileWidget.swift in Sources */,
+				C9E378E02C67DBE200A10B11 /* AnimatedCircularButton.swift in Sources */,
 				C9E378DC2C67D8BE00A10B11 /* WeightSelectionView.swift in Sources */,
 				C96700442C66634900AC9805 /* RegisterViewModel.swift in Sources */,
 				C967000D2C65360400AC9805 /* AuthDataUserModel.swift in Sources */,
