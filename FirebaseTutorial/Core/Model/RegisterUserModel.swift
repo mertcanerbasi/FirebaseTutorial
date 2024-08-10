@@ -8,7 +8,7 @@
 import Foundation
 
 class RegisterUserModel {
-    let shared : RegisterUserModel = RegisterUserModel(name: "", age: 25, gender: .female, height: 175, weight: 70, isPremium: false, notificationsEnabled: true, language: .english)
+    static let shared : RegisterUserModel = RegisterUserModel(name: "", age: 25, gender: .female, height: 175, weight: 70, isPremium: false, notificationsEnabled: true, language: .english)
 
     private init(name: String, age: Int, gender: Gender, height: Int, weight: Int, isPremium: Bool, notificationsEnabled: Bool, language: Language) {
         self.name = name

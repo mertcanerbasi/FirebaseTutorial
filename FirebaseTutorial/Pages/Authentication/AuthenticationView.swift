@@ -10,7 +10,7 @@ import SwiftUI
 struct AuthenticationView: View {
     var body: some View {
         ZStack {
-            Image("bgImage") // Replace with your image name
+            Image("bgImage")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
