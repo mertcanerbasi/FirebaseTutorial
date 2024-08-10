@@ -11,7 +11,6 @@ struct NameSelectionView: View {
     var registerModel: RegisterUserModel = RegisterUserModel.shared
     @State var name: String = ""
     @State var isButtonEnabled: Bool = false
-    @State var navigateToNextPage: Bool = false
 
     var body: some View {
         VStack {
@@ -27,23 +26,22 @@ struct NameSelectionView: View {
                     isButtonEnabled = newValue.count > 2
                 }
             Spacer()
-            NavigationLink(
-                destination: GenderSelectionView(), // Replace with your destination view
-                isActive: $navigateToNextPage,
-                label: {
-                    Button(action: {
-                        if isButtonEnabled {
-                            registerModel.name = name
-                            navigateToNextPage = true // Trigger navigation
-                        }
-                    }, label: {
-                        Text("Continue")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(isButtonEnabled ? .royalBlue : .gray) // Change color based on button state
-                    })
-                    .disabled(!isButtonEnabled) // Disable button if not enabled
+            if isButtonEnabled {
+                NavigationLink(destination: GenderSelectionView()) {
+                    Text("Continue")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundColor(.royalBlue)
+                        .padding()
                 }
-            )// Disable button if not enabled
+            } else {
+                // Button with a disabled appearance
+                Text("Continue")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.gray)
+                    .padding() // Optional padding for consistency
+                    .opacity(0.5)
+            }
+
             Spacer().frame(height: 20)
         }
         .background(
