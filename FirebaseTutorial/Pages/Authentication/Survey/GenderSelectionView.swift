@@ -23,7 +23,7 @@ struct GenderSelectionView: View {
             Spacer().frame(height: 20)
             GenderSelectionTile(gender: "Other",selected: $selectedGender)
             Spacer()
-            NavigationLink(destination: GenderSelectionView()) {
+            NavigationLink(destination: AgeSelectionView()) {
                 Text("Continue")
                     .font(.system(size: 14, weight: .semibold))
                     .foregroundColor(.royalBlue)
@@ -70,7 +70,6 @@ struct GenderSelectionTile: View {
             else {
                 selected = .other
                 registerModel.gender = .other
-                print(registerModel.gender)
             }
         }
         .background(

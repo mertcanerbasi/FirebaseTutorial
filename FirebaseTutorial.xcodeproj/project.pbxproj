@@ -62,6 +62,7 @@
 		C9E378CF2C6789D400A10B11 /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378CE2C6789D400A10B11 /* SurveyView.swift */; };
 		C9E378D12C678DBC00A10B11 /* NameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D02C678DBC00A10B11 /* NameSelectionView.swift */; };
 		C9E378D62C67976900A10B11 /* GenderSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D52C67976900A10B11 /* GenderSelectionView.swift */; };
+		C9E378D82C67D48800A10B11 /* AgeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		C9E378CE2C6789D400A10B11 /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
 		C9E378D02C678DBC00A10B11 /* NameSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSelectionView.swift; sourceTree = "<group>"; };
 		C9E378D52C67976900A10B11 /* GenderSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectionView.swift; sourceTree = "<group>"; };
+		C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				C9E378CD2C6789C700A10B11 /* Survey */,
-				C967003B2C665B5500AC9805 /* RegisterView */,
 				C96700142C65FAF000AC9805 /* LoginEmail */,
 				C967000E2C65371C00AC9805 /* SignInEmail */,
 				C94321BF2C64FA6E00EDF50E /* AuthenticationView.swift */,
@@ -375,6 +376,8 @@
 		C9E378CD2C6789C700A10B11 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				C967003B2C665B5500AC9805 /* RegisterView */,
+				C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */,
 				C9E378D52C67976900A10B11 /* GenderSelectionView.swift */,
 				C9E378D02C678DBC00A10B11 /* NameSelectionView.swift */,
 				C9E378CE2C6789D400A10B11 /* SurveyView.swift */,
@@ -503,6 +506,7 @@
 				C967000A2C6535D200AC9805 /* AuthRepository.swift in Sources */,
 				C94321C02C64FA6E00EDF50E /* AuthenticationView.swift in Sources */,
 				C96700362C664E5100AC9805 /* UserModel.swift in Sources */,
+				C9E378D82C67D48800A10B11 /* AgeSelectionView.swift in Sources */,
 				C9E378D12C678DBC00A10B11 /* NameSelectionView.swift in Sources */,
 				C967002A2C663AB700AC9805 /* Language.swift in Sources */,
 				C967001D2C662F7000AC9805 /* ProgressWidget.swift in Sources */,
