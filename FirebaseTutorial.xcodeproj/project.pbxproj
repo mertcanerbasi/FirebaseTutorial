@@ -63,6 +63,7 @@
 		C9E378D12C678DBC00A10B11 /* NameSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D02C678DBC00A10B11 /* NameSelectionView.swift */; };
 		C9E378D62C67976900A10B11 /* GenderSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D52C67976900A10B11 /* GenderSelectionView.swift */; };
 		C9E378D82C67D48800A10B11 /* AgeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */; };
+		C9E378DA2C67D77000A10B11 /* HeightSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378D92C67D77000A10B11 /* HeightSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		C9E378D02C678DBC00A10B11 /* NameSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSelectionView.swift; sourceTree = "<group>"; };
 		C9E378D52C67976900A10B11 /* GenderSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectionView.swift; sourceTree = "<group>"; };
 		C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSelectionView.swift; sourceTree = "<group>"; };
+		C9E378D92C67D77000A10B11 /* HeightSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				C967003B2C665B5500AC9805 /* RegisterView */,
+				C9E378D92C67D77000A10B11 /* HeightSelectionView.swift */,
 				C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */,
 				C9E378D52C67976900A10B11 /* GenderSelectionView.swift */,
 				C9E378D02C678DBC00A10B11 /* NameSelectionView.swift */,
@@ -514,6 +517,7 @@
 				C9E378CC2C67847D00A10B11 /* RootCases.swift in Sources */,
 				C96700132C65393B00AC9805 /* RootViewModel.swift in Sources */,
 				C967FFF72C652C4200AC9805 /* BaseView.swift in Sources */,
+				C9E378DA2C67D77000A10B11 /* HeightSelectionView.swift in Sources */,
 				C967001B2C662F2600AC9805 /* HomeWelcomeWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
