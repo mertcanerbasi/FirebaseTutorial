@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RegisterView: View {
     @StateObject var viewModel: RegisterViewModel = container.resolve(RegisterViewModel.self)!
-    @State private var showingAlert = false // State to track alert visibility
 
     var body: some View {
         ScrollView {
@@ -25,7 +24,9 @@ struct RegisterView: View {
                 TextFieldWidget(text: $viewModel.passwordAgain, keyboardType: .default, hintText: "Password Again")
                 Spacer().frame(height: 50)
                 SignupButton {
-                    viewModel.registerWithEmailAndPassword()
+                    viewModel.registerWithEmailAndPassword(){
+                        container.resolve(RootViewModel.self)!.showSignInView = false
+                    }
                 }
             }
         }
@@ -34,10 +35,10 @@ struct RegisterView: View {
         .background(
             Color.neroBlack.ignoresSafeArea()
         )
-        .alert(isPresented: $viewModel.isRegistrationSuccessful) {
+        .alert(isPresented: $viewModel.alert.isPresented) {
             Alert(
-                title: Text("Success"),
-                message: Text("You have successfully registered!"),
+                title: Text(viewModel.alert.alertTitle),
+                message: Text(viewModel.alert.alertDesc),
                 dismissButton: .default(Text("OK")) {
                     // Optionally reset the view model or perform additional actions
                     viewModel.email = ""

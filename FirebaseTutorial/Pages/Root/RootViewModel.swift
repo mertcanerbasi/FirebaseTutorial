@@ -9,7 +9,7 @@ import Foundation
 
 
 final class RootViewModel : ObservableObject {
-    final var _authRepository: AuthRepository
+    final let _authRepository: AuthRepository
 
     init(authRepository: AuthRepository) {
         self._authRepository = authRepository

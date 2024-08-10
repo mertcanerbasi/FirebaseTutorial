@@ -45,6 +45,7 @@
 		C967003F2C66605F00AC9805 /* TextFieldWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967003E2C66605F00AC9805 /* TextFieldWidget.swift */; };
 		C96700422C66631600AC9805 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96700412C66631600AC9805 /* String+.swift */; };
 		C96700442C66634900AC9805 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96700432C66634900AC9805 /* RegisterViewModel.swift */; };
+		C967004A2C67721500AC9805 /* DialogContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96700492C67721500AC9805 /* DialogContent.swift */; };
 		C967FFF72C652C4200AC9805 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFF62C652C4200AC9805 /* BaseView.swift */; };
 		C967FFF92C652CC900AC9805 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFF82C652CC900AC9805 /* ProfileView.swift */; };
 		C967FFFB2C652DAF00AC9805 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFFA2C652DAF00AC9805 /* WorkoutsView.swift */; };
@@ -54,6 +55,9 @@
 		C9DD9CCA2C6505DD0043C8A1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CC92C6505DD0043C8A1 /* HomeView.swift */; };
 		C9DD9CCC2C6507330043C8A1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CCB2C6507330043C8A1 /* RootView.swift */; };
 		C9DD9CCF2C652A9C0043C8A1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CCE2C652A9C0043C8A1 /* HomeViewModel.swift */; };
+		C9E378C52C67755200A10B11 /* RegisterErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378C42C67755200A10B11 /* RegisterErrors.swift */; };
+		C9E378C72C6777AF00A10B11 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378C62C6777AF00A10B11 /* LocalRepository.swift */; };
+		C9E378C92C677A4F00A10B11 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E378C82C677A4F00A10B11 /* UserDefaults+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,7 @@
 		C967003E2C66605F00AC9805 /* TextFieldWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWidget.swift; sourceTree = "<group>"; };
 		C96700412C66631600AC9805 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		C96700432C66634900AC9805 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		C96700492C67721500AC9805 /* DialogContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogContent.swift; sourceTree = "<group>"; };
 		C967FFF62C652C4200AC9805 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		C967FFF82C652CC900AC9805 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C967FFFA2C652DAF00AC9805 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
@@ -99,6 +104,9 @@
 		C9DD9CC92C6505DD0043C8A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9DD9CCB2C6507330043C8A1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C9DD9CCE2C652A9C0043C8A1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C9E378C42C67755200A10B11 /* RegisterErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterErrors.swift; sourceTree = "<group>"; };
+		C9E378C62C6777AF00A10B11 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
+		C9E378C82C677A4F00A10B11 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				C96700092C6535D200AC9805 /* AuthRepository.swift */,
+				C9E378C62C6777AF00A10B11 /* LocalRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -216,6 +225,7 @@
 				C96700352C664E5100AC9805 /* UserModel.swift */,
 				C96700372C664F1200AC9805 /* Workout.swift */,
 				C96700392C664FA200AC9805 /* WorkoutLog.swift */,
+				C96700492C67721500AC9805 /* DialogContent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +271,7 @@
 		C96700202C6639F700AC9805 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				C9E378C32C67754600A10B11 /* ErrorCases */,
 				C96700212C663A0100AC9805 /* ActivityLevels.swift */,
 				C96700232C663A4A00AC9805 /* BmiRange.swift */,
 				C96700252C663A7F00AC9805 /* CalculatorType.swift */,
@@ -284,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				C96700412C66631600AC9805 /* String+.swift */,
+				C9E378C82C677A4F00A10B11 /* UserDefaults+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,6 +344,14 @@
 				C9DD9CCE2C652A9C0043C8A1 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		C9E378C32C67754600A10B11 /* ErrorCases */ = {
+			isa = PBXGroup;
+			children = (
+				C9E378C42C67755200A10B11 /* RegisterErrors.swift */,
+			);
+			path = ErrorCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,12 +451,16 @@
 				C967002C2C663AD100AC9805 /* MuscleParts.swift in Sources */,
 				C96700342C66454B00AC9805 /* RegisterUserModel.swift in Sources */,
 				C96700072C652FD900AC9805 /* AppModule.swift in Sources */,
+				C9E378C52C67755200A10B11 /* RegisterErrors.swift in Sources */,
 				C9DD9CCC2C6507330043C8A1 /* RootView.swift in Sources */,
+				C9E378C92C677A4F00A10B11 /* UserDefaults+.swift in Sources */,
+				C9E378C72C6777AF00A10B11 /* LocalRepository.swift in Sources */,
 				C96700182C65FB0C00AC9805 /* LoginViewModel.swift in Sources */,
 				C96700222C663A0100AC9805 /* ActivityLevels.swift in Sources */,
 				C967003A2C664FA200AC9805 /* WorkoutLog.swift in Sources */,
 				C967003F2C66605F00AC9805 /* TextFieldWidget.swift in Sources */,
 				C96700282C663AA200AC9805 /* Gender.swift in Sources */,
+				C967004A2C67721500AC9805 /* DialogContent.swift in Sources */,
 				C96700382C664F1200AC9805 /* Workout.swift in Sources */,
 				C967FFFF2C652E3900AC9805 /* ProfileViewModel.swift in Sources */,
 				C96700242C663A4A00AC9805 /* BmiRange.swift in Sources */,

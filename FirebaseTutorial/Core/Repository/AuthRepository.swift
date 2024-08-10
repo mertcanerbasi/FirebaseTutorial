@@ -9,30 +9,28 @@ import Foundation
 import FirebaseAuth
 
 protocol AuthRepository {
-    func registerWithEmailAndPassword(email:String, password: String) async throws -> AuthDataResultModel
-    func getUserData() throws -> AuthDataResultModel
+    func registerWithEmailAndPassword(email:String, password: String) async throws -> User
+    func getUserData() throws -> User
     func loginWithEmailAndPassword(email: String, password: String,compilation: @escaping (User?) -> Void)
     func signout()
 }
 
 
 final class AuthRepositoryImpl : AuthRepository {
-
-    func getUserData() throws -> AuthDataResultModel {
+    func getUserData() throws -> User {
         guard let user = Auth.auth().currentUser else{
             throw URLError(.badServerResponse)
         }
-        return AuthDataResultModel(user: user)
+        return user
     }
 
-    func registerWithEmailAndPassword(email: String, password: String) async throws -> AuthDataResultModel{
+    func registerWithEmailAndPassword(email: String, password: String) async throws -> User{
        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
-       return AuthDataResultModel(user: authDataResult.user)
+       return authDataResult.user
     }
 
     func loginWithEmailAndPassword(email: String, password: String,compilation: @escaping (User?) -> Void) {
-        let authResult: () = Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-            guard let self = self else { return }
+        let _: () = Auth.auth().signIn(withEmail: email, password: password) { result, error in
             compilation(result?.user)
         }
     }

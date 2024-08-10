@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct RootView: View {
-    @StateObject var viewModel = container.resolve(RootViewModel.self)!
+    @StateObject var viewModel: RootViewModel = container.resolve(RootViewModel.self)!
+
+
     var body: some View {
-        ZStack {
-            BaseView()
-        }.onAppear {
-            viewModel.isAuthenticated()
-        }
-        .fullScreenCover(isPresented: $viewModel.showSignInView, content: {
-            NavigationStack {
-                AuthenticationView()
-            }.tint(.vividOrange)
-        })
+        Group {
+                if viewModel.showSignInView {
+                    NavigationStack {
+                        AuthenticationView()
+                    }
+                    .tint(.vividOrange)
+                } else {
+                    BaseView()
+                }
+            }
+            .onAppear {
+                viewModel.isAuthenticated()
+            }
     }
 }
 

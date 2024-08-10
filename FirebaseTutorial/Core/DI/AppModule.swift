@@ -13,6 +13,10 @@ let container = Container()
 
 func setupDI() {
 
+    container.register(LocalRepositoryImpl.self) { _ in
+        LocalRepositoryImpl()
+    }.inObjectScope(.container)
+
     container.register(AuthRepositoryImpl.self) { _ in
         AuthRepositoryImpl()
     }.inObjectScope(.container)
