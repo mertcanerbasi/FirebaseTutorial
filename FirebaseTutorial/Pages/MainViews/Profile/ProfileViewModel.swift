@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ProfileViewModel: ObservableObject {
+final class ProfileViewModel: BaseViewModel {
     final var _authRepository: AuthRepository
 
     init(authRepository: AuthRepository) {

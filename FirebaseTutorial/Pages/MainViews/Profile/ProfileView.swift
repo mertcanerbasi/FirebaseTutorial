@@ -13,12 +13,15 @@ struct ProfileView: View {
     @ObservedObject var rootVm = container.resolve(RootViewModel.self)!
 
     var body: some View {
-        Button(action: {
-            viewModel.signout()
-            rootVm.setRootCase()
-        }, label: {
-            Text("Sign Out")
-        })
+        BaseView(viewModel: viewModel) {
+            Button(action: {
+                viewModel.signout()
+                rootVm.setRootCase()
+            }, label: {
+                Text("Sign Out")
+            })
+        }
+
     }
 }
 

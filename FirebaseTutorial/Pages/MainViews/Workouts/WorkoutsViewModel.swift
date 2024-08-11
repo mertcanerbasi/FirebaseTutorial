@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class WorkoutsViewModel : ObservableObject {
+final class WorkoutsViewModel : BaseViewModel {
 
 }

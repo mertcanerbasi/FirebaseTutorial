@@ -37,7 +37,10 @@ final class RegisterViewModel: BaseViewModel {
         }
 
         Task {
-            self.isLoading = true
+            DispatchQueue.main.async {
+                self.isLoading = true
+            }
+
             do {
                 let _ = try await _authRepository.registerWithEmailAndPassword(email: email, password: password)
                 DispatchQueue.main.async {

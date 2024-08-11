@@ -8,12 +8,27 @@
 import Foundation
 
 final class HomeViewModel : BaseViewModel {
+    final var _authRepository: AuthRepository
+    final var _localRepository: LocalRepository
+
+    init(authRepository: AuthRepository, localRepository: LocalRepository) {
+        self._authRepository = authRepository
+        self._localRepository = localRepository
+        super.init()
+        getLocalUser()
+    }
+
+    func getLocalUser() {
+        let userData =  _localRepository.currentUserData()
+        self.user = userData
+
+    }
 
     func printHello(){
         print("Hello")
     }
 
-    @Published var user : UserModel = UserModel(name: "Mertcan", age: 26, gender: .male, height: 183, weight: 85, isPremium: false, language: .english, notificationsEnabled: true)
+    @Published var user : UserModel?
 
 }
 
