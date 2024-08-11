@@ -40,7 +40,7 @@ final class RegisterViewModel: ObservableObject {
 
         Task {
             do {
-                let user = try await _authRepository.registerWithEmailAndPassword(email: email, password: password)
+                let _ = try await _authRepository.registerWithEmailAndPassword(email: email, password: password)
                 complation()
 
             } catch {

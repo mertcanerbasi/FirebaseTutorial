@@ -20,7 +20,7 @@ struct AuthenticationView: View {
                     .font(.system(size: 24,weight: .semibold))
                     .foregroundColor(.white)
                 Spacer().frame(height: 5)
-                Text("Your personal sport Assistant")
+                Text("Your personal sport assistant")
                     .font(.system(size: 14,weight: .regular))
                     .foregroundColor(.white)
                 Spacer().frame(height: 20)

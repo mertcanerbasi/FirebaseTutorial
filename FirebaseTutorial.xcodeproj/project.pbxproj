@@ -51,6 +51,9 @@
 		C967FFFD2C652DBC00AC9805 /* WorkoutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFFC2C652DBC00AC9805 /* WorkoutsViewModel.swift */; };
 		C967FFFF2C652E3900AC9805 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFFE2C652E3900AC9805 /* ProfileViewModel.swift */; };
 		C9AFF33D2C68EF1300565FED /* PromiseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF33C2C68EF1300565FED /* PromiseViewModel.swift */; };
+		C9AFF33F2C68FCE600565FED /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF33E2C68FCE600565FED /* LoadingView.swift */; };
+		C9AFF3412C69001700565FED /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = C9AFF3402C69001700565FED /* loading.gif */; };
+		C9AFF3432C69018000565FED /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF3422C69018000565FED /* GifView.swift */; };
 		C9DD9CCA2C6505DD0043C8A1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CC92C6505DD0043C8A1 /* HomeView.swift */; };
 		C9DD9CCC2C6507330043C8A1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CCB2C6507330043C8A1 /* RootView.swift */; };
 		C9DD9CCF2C652A9C0043C8A1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CCE2C652A9C0043C8A1 /* HomeViewModel.swift */; };
@@ -108,6 +111,9 @@
 		C967FFFC2C652DBC00AC9805 /* WorkoutsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewModel.swift; sourceTree = "<group>"; };
 		C967FFFE2C652E3900AC9805 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C9AFF33C2C68EF1300565FED /* PromiseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseViewModel.swift; sourceTree = "<group>"; };
+		C9AFF33E2C68FCE600565FED /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C9AFF3402C69001700565FED /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		C9AFF3422C69018000565FED /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		C9DD9CC92C6505DD0043C8A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9DD9CCB2C6507330043C8A1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		C9DD9CCE2C652A9C0043C8A1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 		C94321A22C64F4D800EDF50E /* FirebaseTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				C9AFF3402C69001700565FED /* loading.gif */,
 				C96700042C652FC300AC9805 /* Core */,
 				C96700032C652FB900AC9805 /* Pages */,
 				C96700192C662F0B00AC9805 /* Widgets */,
@@ -271,6 +278,8 @@
 				C967001E2C662FC400AC9805 /* ProfileTileWidget.swift */,
 				C967003E2C66605F00AC9805 /* TextFieldWidget.swift */,
 				C9E378DF2C67DBE200A10B11 /* AnimatedCircularButton.swift */,
+				C9AFF33E2C68FCE600565FED /* LoadingView.swift */,
+				C9AFF3422C69018000565FED /* GifView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -465,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94321AB2C64F4DC00EDF50E /* Preview Assets.xcassets in Resources */,
+				C9AFF3412C69001700565FED /* loading.gif in Resources */,
 				C94321A82C64F4DC00EDF50E /* Assets.xcassets in Resources */,
 				C94321B22C64F78C00EDF50E /* GoogleService-Info.plist in Resources */,
 			);
@@ -510,11 +520,13 @@
 				C9DD9CCF2C652A9C0043C8A1 /* HomeViewModel.swift in Sources */,
 				C967001F2C662FC400AC9805 /* ProfileTileWidget.swift in Sources */,
 				C9E378E02C67DBE200A10B11 /* AnimatedCircularButton.swift in Sources */,
+				C9AFF3432C69018000565FED /* GifView.swift in Sources */,
 				C9E378DC2C67D8BE00A10B11 /* WeightSelectionView.swift in Sources */,
 				C96700442C66634900AC9805 /* RegisterViewModel.swift in Sources */,
 				C967000D2C65360400AC9805 /* AuthDataUserModel.swift in Sources */,
 				C967000A2C6535D200AC9805 /* AuthRepository.swift in Sources */,
 				C94321C02C64FA6E00EDF50E /* AuthenticationView.swift in Sources */,
+				C9AFF33F2C68FCE600565FED /* LoadingView.swift in Sources */,
 				C96700362C664E5100AC9805 /* UserModel.swift in Sources */,
 				C9E378D82C67D48800A10B11 /* AgeSelectionView.swift in Sources */,
 				C9E378D12C678DBC00A10B11 /* NameSelectionView.swift in Sources */,

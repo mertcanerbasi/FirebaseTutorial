@@ -19,25 +19,28 @@ final class RootViewModel : ObservableObject {
 
     @Published var rootCase: RootCases = .notLoggedIn
 
-    func setRootCase(){
-        let user =  _authRepository.getUserData()
-        let localUser = _localRepository.currentUserData()
+    func setRootCase() {
+        Task {
+            let user = try await _authRepository.getUserData()
+            let localUser = _localRepository.currentUserData()
 
-        if  user != nil,  localUser != nil {
-            DispatchQueue.main.async {
-                self.rootCase = .loggedIn
-            }
+            if  user != nil,  localUser != nil {
+                DispatchQueue.main.async {
+                    self.rootCase = .loggedIn
+                }
 
-        }
-        else if user != nil {
-            DispatchQueue.main.async {
-                self.rootCase = .survey
+            }
+            else if user != nil {
+                DispatchQueue.main.async {
+                    self.rootCase = .survey
+                }
+            }
+            else {
+                DispatchQueue.main.async {
+                    self.rootCase = .notLoggedIn
+                }
             }
         }
-        else {
-            DispatchQueue.main.async {
-                self.rootCase = .notLoggedIn
-            }
-        }
+
     }
 }

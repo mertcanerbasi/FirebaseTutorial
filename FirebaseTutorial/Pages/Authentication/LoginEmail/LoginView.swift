@@ -11,50 +11,86 @@ struct LoginView: View {
     @StateObject var viewModel: LoginViewModel = container.resolve(LoginViewModel.self)!
     @ObservedObject var rootVm: RootViewModel = container.resolve(RootViewModel.self)!
     var body: some View {
-        VStack {
-            TextField("Email...", text: $viewModel.email)
-                .autocorrectionDisabled()
-                .textInputAutocapitalization(.never)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+        ZStack {
+            
+            ScrollView {
+                VStack {
+                    Text("Welcome Back!")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundColor(.white)
+                    Spacer().frame(height: 20)
+                    TextFieldWidget(text: $viewModel.email, keyboardType: .emailAddress, hintText: "Email")
+                    Spacer().frame(height: 20)
+                    TextFieldWidget(text: $viewModel.password, keyboardType: .default, hintText: "Password")
+                    Spacer().frame(height: 5)
+                    Button {
 
-            TextField("Password...", text: $viewModel.password)
-                .autocorrectionDisabled()
-                .textInputAutocapitalization(.never)
-                .padding()
-                .background(Color.gray.opacity(0.2))
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+                    } label: {
+                        Text("Forgot Password?")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundColor(.vividOrange)
+                    }
 
-            Button(action:  {
+                    Spacer().frame(height: 50)
+                    LoginButton {
+                        viewModel.login {
+                            rootVm.setRootCase()
+                        }
+                    }
 
-                viewModel.login() { res in
-                    rootVm.setRootCase()
                 }
+            }
+            .padding(.horizontal,10)
+            .padding(.vertical,15)
+            .background(
+                Color.neroBlack.ignoresSafeArea()
+            )
 
-            }, label: {
-                Text("Login")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-
-            })
-
-            Spacer()
-
-
-
-
+            if viewModel.isLoading {
+                LoadingView()
+            }
         }
-        .padding(.horizontal,10)
-        .padding(.vertical,15)
-        .navigationTitle("Login with Email")
+
+        .alert(isPresented: $viewModel.alert.isPresented) {
+            Alert(
+                title: Text(viewModel.alert.alertTitle),
+                message: Text(viewModel.alert.alertDesc),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 
 #Preview {
     LoginView()
+}
+
+
+struct LoginButton: View {
+    let onTap: () -> Void
+
+    var body: some View {
+        HStack {
+            Spacer()
+            Text("Login")
+                .font(.system(size: 16, weight: .medium))
+                .foregroundColor(.white)
+            Spacer().frame(width: 15)
+            Circle()
+                .fill(
+                    .vividOrange
+                )
+                .frame(width: 35, height: 35)
+                .overlay {
+                    Image(systemName: "arrow.forward")
+                        .resizable()
+                        .foregroundColor(.white)
+                        .frame(width: 20, height: 20)
+                }
+        }
+        .padding(.trailing, 20)
+        .onTapGesture {
+            onTap()
+        }
+    }
 }

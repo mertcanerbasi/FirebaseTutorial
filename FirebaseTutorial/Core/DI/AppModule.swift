@@ -34,7 +34,7 @@ func setupDI() {
     }
 
     container.register(LoginViewModel.self) { _ in
-        LoginViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
+        LoginViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!,localRepository: container.resolve(LocalRepositoryImpl.self)!)
     }
 
     container.register(HomeViewModel.self) { _ in

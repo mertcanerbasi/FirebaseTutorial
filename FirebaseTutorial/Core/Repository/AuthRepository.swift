@@ -37,13 +37,23 @@ final class AuthRepositoryImpl : AuthRepository {
     }
     
     func getUserData() async throws -> UserModel? {
-        let userDoc = try await Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).getDocument()
+        let currentUser: User? = Auth.auth().currentUser
+        if currentUser != nil {
+            let userDoc = try await Firestore.firestore().collection("users").document(currentUser!.uid).getDocument()
 
-        if let userData = userDoc.data() {
-            let userModel = try JSONDecoder().decode(UserModel.self, from:JSONSerialization.data(withJSONObject: userData))
-            return userModel
+            if let userData = userDoc.data() {
+                let userModel = try JSONDecoder().decode(UserModel.self, from:JSONSerialization.data(withJSONObject: userData))
+                return userModel
+            }
+            else {
+                return nil
+            }
         }
-        return nil
+        else {
+            return nil
+        }
+
+
     }
 
     func registerWithEmailAndPassword(email: String, password: String) async throws -> User{
