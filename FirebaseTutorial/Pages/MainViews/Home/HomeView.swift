@@ -10,10 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewModel = container.resolve(HomeViewModel.self)!
     var body: some View {
-        ZStack {
-            Color("neroBlack", bundle: nil).ignoresSafeArea()
+        BaseView(viewModel: viewModel) {
             ScrollView {
-                Color.clear.ignoresSafeArea()
                 VStack{
                     HomeWelcomeWidget(user: viewModel.user)
                     Spacer().frame(height: 20)
@@ -22,7 +20,6 @@ struct HomeView: View {
                 }
             }.padding(.horizontal)
         }
-
     }
 }
 

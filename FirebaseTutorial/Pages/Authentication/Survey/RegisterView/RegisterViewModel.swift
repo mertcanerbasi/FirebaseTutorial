@@ -9,11 +9,8 @@ import Foundation
 import FirebaseAuth
 
 
-final class RegisterViewModel: ObservableObject {
+final class RegisterViewModel: BaseViewModel {
     let _authRepository: AuthRepository
-
-    // Property to track if registration was successful
-    @Published var alert : DialogContent = DialogContent(isPresented: false, alertTitle: "", alertDesc: "")
 
     init(authRepository: AuthRepository) {
         self._authRepository = authRepository
@@ -27,28 +24,36 @@ final class RegisterViewModel: ObservableObject {
     func registerWithEmailAndPassword(complation: @escaping ()-> Void){
         guard !password.isEmpty, password == passwordAgain else {
             DispatchQueue.main.async {
-                self.alert = DialogContent(isPresented: true, alertTitle: "Password Error", alertDesc: "Please check your password")
+                self.alert = DialogContent(isPresented: true, message: "Please check your password")
             }
             return
         }
         guard !email.isEmpty, email.isValidEmail else {
             DispatchQueue.main.async {
-                self.alert = DialogContent(isPresented: true, alertTitle: "Email Error", alertDesc: "Please check your email")
+                self.alert = DialogContent(isPresented: true, message: "Invalid email")
             }
+
             return
         }
 
         Task {
+            self.isLoading = true
             do {
                 let _ = try await _authRepository.registerWithEmailAndPassword(email: email, password: password)
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
                 complation()
 
             } catch {
                 print("Error: \(error)")
-                DispatchQueue.main.async {
-                    self.alert = DialogContent(isPresented: true, alertTitle: "Registration Unsuccessfull", alertDesc: "You couldnt be registered due to an error")
-                }
 
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.alert = DialogContent(isPresented: true,  message: "You couldnt be registered due to an error")
+                }
+                
+                
             }
         }
 

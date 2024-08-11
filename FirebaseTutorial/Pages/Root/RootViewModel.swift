@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 
-final class RootViewModel : ObservableObject {
+final class RootViewModel : BaseViewModel {
     final let _authRepository: AuthRepository
     final let _localRepository: LocalRepository
 
@@ -21,7 +22,7 @@ final class RootViewModel : ObservableObject {
 
     func setRootCase() {
         Task {
-            let user = try await _authRepository.getUserData()
+            let user = Auth.auth().currentUser
             let localUser = _localRepository.currentUserData()
 
             if  user != nil,  localUser != nil {

@@ -9,6 +9,5 @@ import Foundation
 
 struct DialogContent {
     var isPresented : Bool
-    var alertTitle: String
-    var alertDesc: String
+    var message: String
 }

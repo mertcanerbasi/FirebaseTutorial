@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class HomeViewModel : ObservableObject {
+final class HomeViewModel : BaseViewModel {
 
     func printHello(){
         print("Hello")

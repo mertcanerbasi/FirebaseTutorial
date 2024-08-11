@@ -11,8 +11,7 @@ struct LoginView: View {
     @StateObject var viewModel: LoginViewModel = container.resolve(LoginViewModel.self)!
     @ObservedObject var rootVm: RootViewModel = container.resolve(RootViewModel.self)!
     var body: some View {
-        ZStack {
-            
+        BaseView(viewModel: viewModel) {
             ScrollView {
                 VStack {
                     Text("Welcome Back!")
@@ -40,24 +39,10 @@ struct LoginView: View {
 
                 }
             }
-            .padding(.horizontal,10)
-            .padding(.vertical,15)
-            .background(
-                Color.neroBlack.ignoresSafeArea()
-            )
-
-            if viewModel.isLoading {
-                LoadingView()
-            }
         }
 
-        .alert(isPresented: $viewModel.alert.isPresented) {
-            Alert(
-                title: Text(viewModel.alert.alertTitle),
-                message: Text(viewModel.alert.alertDesc),
-                dismissButton: .default(Text("OK"))
-            )
-        }
+
+
     }
 }
 

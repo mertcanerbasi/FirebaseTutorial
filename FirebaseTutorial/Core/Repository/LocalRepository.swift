@@ -14,9 +14,19 @@ protocol LocalRepository {
     func checkUser(user: User) async throws -> Bool
     func saveUserInfo() async throws
     func currentUserData() -> UserModel?
+    func clearData()
 }
 
 class LocalRepositoryImpl : LocalRepository {
+    func clearData() {
+        let defaults = UserDefaults.standard
+            let dictionary = defaults.dictionaryRepresentation()
+            dictionary.keys.forEach { key in
+                defaults.removeObject(forKey: key)
+            }
+            defaults.synchronize()
+    }
+    
     func currentUserData()  -> UserModel? {
         return UserDefaults.standard.getData(forKey: "user", as: UserModel.self)
     }

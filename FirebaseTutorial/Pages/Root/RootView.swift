@@ -25,7 +25,7 @@ struct RootView: View {
                     }
                     .tint(.vividOrange)
                 case .loggedIn:
-                    BaseView()
+                    AppView()
             }
             }
             .onAppear {

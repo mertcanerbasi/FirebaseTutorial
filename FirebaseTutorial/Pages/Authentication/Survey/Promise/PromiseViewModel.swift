@@ -8,7 +8,7 @@
 import Foundation
 
 
-final class PromiseViewModel : ObservableObject {
+final class PromiseViewModel : BaseViewModel {
     final var _authRepository : AuthRepository
     final var _localRepository: LocalRepository
 
@@ -17,21 +17,28 @@ final class PromiseViewModel : ObservableObject {
         self._localRepository = localRepository
     }
 
-    @Published var alert : DialogContent = DialogContent(isPresented: false, alertTitle: "", alertDesc: "")
-
-
     func saveUserInfo(registerUserModel : RegisterUserModel,complation: @escaping() -> Void)   {
         Task {
+            DispatchQueue.main.async {
+                self.isLoading = true
+            }
+
             do {
                 try await _authRepository.saveUserInfo(model: registerUserModel)
                 try await _localRepository.saveUserInfo()
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
                 complation()
             }
             catch {
                 print(error)
                 DispatchQueue.main.async {
-                    self.alert = DialogContent(isPresented: true, alertTitle: "Registration Unsuccessfull", alertDesc: "You couldnt be registered due to an error")
+                    self.isLoading = false
+                    self.alert = DialogContent(isPresented: true, message: "Unknown problem occured")
                 }
+
+                
             }
         }
 
