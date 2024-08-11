@@ -19,6 +19,11 @@ struct HomeView: View {
                     Spacer()
                 }
             }.padding(.horizontal)
+                .onAppear {
+                    Task {
+                        await viewModel.getAllData()
+                    }
+                }
         }
     }
 }

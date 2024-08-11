@@ -21,6 +21,10 @@ func setupDI() {
         AuthRepositoryImpl()
     }.inObjectScope(.container)
 
+    container.register(GoalsRepositoryImpl.self) { _ in
+        GoalsRepositoryImpl()
+    }.inObjectScope(.container)
+
     container.register(RootViewModel.self) { _ in
         RootViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!,localRepository: container.resolve(LocalRepositoryImpl.self)!)
     }.inObjectScope(.container)
@@ -38,7 +42,7 @@ func setupDI() {
     }
 
     container.register(HomeViewModel.self) { _ in
-        HomeViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!,localRepository: container.resolve(LocalRepositoryImpl.self)!)
+        HomeViewModel(goalsRepository: container.resolve(GoalsRepositoryImpl.self)!,localRepository: container.resolve(LocalRepositoryImpl.self)!)
     }
 
     container.register(WorkoutsViewModel.self) { _ in

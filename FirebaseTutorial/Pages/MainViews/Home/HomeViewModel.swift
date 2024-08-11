@@ -8,27 +8,57 @@
 import Foundation
 
 final class HomeViewModel : BaseViewModel {
-    final var _authRepository: AuthRepository
+    final var _goalsRepository: GoalsRepository
     final var _localRepository: LocalRepository
 
-    init(authRepository: AuthRepository, localRepository: LocalRepository) {
-        self._authRepository = authRepository
+    init(goalsRepository: GoalsRepository, localRepository: LocalRepository) {
+        self._goalsRepository = goalsRepository
         self._localRepository = localRepository
         super.init()
         getLocalUser()
     }
 
+    //Variables
+    @Published var user : UserModel?
+    @Published var goals: Goals?
+
     func getLocalUser() {
         let userData =  _localRepository.currentUserData()
-        self.user = userData
+        DispatchQueue.main.async {
+            self.user = userData
+        }
 
+    }
+
+    func getGoals() async {
+        do {
+           var goalData = try await _goalsRepository.getCurrentGoals()
+            DispatchQueue.main.async {
+                self.goals = goalData
+            }
+
+        }
+        catch {
+            print(error)
+            print("Goals couldnt be fetched")
+        }
+    }
+
+    func getAllData() async {
+        DispatchQueue.main.async {
+            self.isLoading = true
+        }
+        await getGoals()
+        DispatchQueue.main.async {
+            self.isLoading = false
+        }
     }
 
     func printHello(){
         print("Hello")
     }
 
-    @Published var user : UserModel?
+
 
 }
 
