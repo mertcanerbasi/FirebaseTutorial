@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 protocol LocalRepository {
     func checkUser(user: User) async throws -> Bool
-    func saveUserInfo(user: User) async throws
+    func saveUserInfo() async throws
     func currentUserData() -> UserModel?
 }
 
@@ -26,7 +26,8 @@ class LocalRepositoryImpl : LocalRepository {
         return userDoc.exists
     }
     
-    func saveUserInfo(user: FirebaseAuth.User) async throws {
+    func saveUserInfo() async throws {
+        let user : User = Auth.auth().currentUser!
         let result = try await checkUser(user: user)
 
         if result == true {

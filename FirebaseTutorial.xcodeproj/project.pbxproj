@@ -51,6 +51,7 @@
 		C967FFFB2C652DAF00AC9805 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFFA2C652DAF00AC9805 /* WorkoutsView.swift */; };
 		C967FFFD2C652DBC00AC9805 /* WorkoutsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFFC2C652DBC00AC9805 /* WorkoutsViewModel.swift */; };
 		C967FFFF2C652E3900AC9805 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C967FFFE2C652E3900AC9805 /* ProfileViewModel.swift */; };
+		C9AFF33D2C68EF1300565FED /* PromiseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFF33C2C68EF1300565FED /* PromiseViewModel.swift */; };
 		C9DD9CC32C64FF110043C8A1 /* SignInWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CC22C64FF110043C8A1 /* SignInWithEmailView.swift */; };
 		C9DD9CCA2C6505DD0043C8A1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CC92C6505DD0043C8A1 /* HomeView.swift */; };
 		C9DD9CCC2C6507330043C8A1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DD9CCB2C6507330043C8A1 /* RootView.swift */; };
@@ -109,6 +110,7 @@
 		C967FFFA2C652DAF00AC9805 /* WorkoutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsView.swift; sourceTree = "<group>"; };
 		C967FFFC2C652DBC00AC9805 /* WorkoutsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsViewModel.swift; sourceTree = "<group>"; };
 		C967FFFE2C652E3900AC9805 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		C9AFF33C2C68EF1300565FED /* PromiseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseViewModel.swift; sourceTree = "<group>"; };
 		C9DD9CC22C64FF110043C8A1 /* SignInWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithEmailView.swift; sourceTree = "<group>"; };
 		C9DD9CC92C6505DD0043C8A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C9DD9CCB2C6507330043C8A1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -357,6 +359,15 @@
 			path = BaseView;
 			sourceTree = "<group>";
 		};
+		C9AFF33B2C68EF0200565FED /* Promise */ = {
+			isa = PBXGroup;
+			children = (
+				C9E378DD2C67D98500A10B11 /* PromiseView.swift */,
+				C9AFF33C2C68EF1300565FED /* PromiseViewModel.swift */,
+			);
+			path = Promise;
+			sourceTree = "<group>";
+		};
 		C9DD9CC82C6505D00043C8A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,8 +396,8 @@
 		C9E378CD2C6789C700A10B11 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				C9AFF33B2C68EF0200565FED /* Promise */,
 				C967003B2C665B5500AC9805 /* RegisterView */,
-				C9E378DD2C67D98500A10B11 /* PromiseView.swift */,
 				C9E378DB2C67D8BE00A10B11 /* WeightSelectionView.swift */,
 				C9E378D92C67D77000A10B11 /* HeightSelectionView.swift */,
 				C9E378D72C67D48800A10B11 /* AgeSelectionView.swift */,
@@ -524,6 +535,7 @@
 				C9E378D82C67D48800A10B11 /* AgeSelectionView.swift in Sources */,
 				C9E378D12C678DBC00A10B11 /* NameSelectionView.swift in Sources */,
 				C967002A2C663AB700AC9805 /* Language.swift in Sources */,
+				C9AFF33D2C68EF1300565FED /* PromiseViewModel.swift in Sources */,
 				C967001D2C662F7000AC9805 /* ProgressWidget.swift in Sources */,
 				C967003D2C665B6300AC9805 /* RegisterView.swift in Sources */,
 				C9E378CC2C67847D00A10B11 /* RootCases.swift in Sources */,
