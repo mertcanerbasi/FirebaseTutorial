@@ -26,7 +26,7 @@ struct AuthenticationView: View {
                 Spacer().frame(height: 20)
                 NavigationLink {
                     RegisterView()
-//                    SignInWithEmail(showSignInView: $showSignInView)
+
                 } label: {
                     Text("Get Started")
                         .font(.system(size: 14,weight: .bold))

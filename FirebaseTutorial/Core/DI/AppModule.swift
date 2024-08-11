@@ -33,10 +33,6 @@ func setupDI() {
         PromiseViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!,localRepository: container.resolve(LocalRepositoryImpl.self)!)
     }
 
-    container.register(SignInEmailViewModel.self) { _ in
-        SignInEmailViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
-    }
-
     container.register(LoginViewModel.self) { _ in
         LoginViewModel(authRepository: container.resolve(AuthRepositoryImpl.self)!)
     }

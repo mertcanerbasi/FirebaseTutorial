@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 protocol AuthRepository {
     func registerWithEmailAndPassword(email:String, password: String) async throws -> User
-    func getUserData() -> User?
+    func getUserData() async throws -> UserModel?
     func loginWithEmailAndPassword(email: String, password: String,compilation: @escaping (User?) -> Void)
     func saveUserInfo(model : RegisterUserModel) async throws
     func signout()
@@ -36,8 +36,14 @@ final class AuthRepositoryImpl : AuthRepository {
         try await Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).setData(userData)
     }
     
-    func getUserData() -> User? {
-        return Auth.auth().currentUser
+    func getUserData() async throws -> UserModel? {
+        let userDoc = try await Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).getDocument()
+
+        if let userData = userDoc.data() {
+            let userModel = try JSONDecoder().decode(UserModel.self, from:JSONSerialization.data(withJSONObject: userData))
+            return userModel
+        }
+        return nil
     }
 
     func registerWithEmailAndPassword(email: String, password: String) async throws -> User{
